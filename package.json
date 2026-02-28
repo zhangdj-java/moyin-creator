@@ -16,9 +16,11 @@
   "type": "module",
   "scripts": {
     "dev": "electron-vite dev",
-    "build": "electron-vite build && electron-builder --win",
-    "prebuild": "powershell -Command \"Stop-Process -Name 'moyin-creator' -ErrorAction SilentlyContinue; Stop-Process -Name '魔因漫创' -ErrorAction SilentlyContinue; Stop-Process -Name 'moyin-creator-*-setup' -ErrorAction SilentlyContinue; if (Test-Path release) { Remove-Item -Recurse -Force release -ErrorAction SilentlyContinue }\"",
+    "build": "electron-vite build && electron-builder",
     "build:win": "electron-vite build && electron-builder --win",
+    "build:linux": "electron-vite build && electron-builder --linux",
+    "build:mac": "electron-vite build && electron-builder --mac",
+    "prebuild": "rm -rf release out dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "electron-vite preview"
   },

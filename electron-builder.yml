@@ -41,3 +41,30 @@ nsis:
   installerIcon: build/icon.ico
   uninstallerIcon: build/icon.ico
   installerHeaderIcon: build/icon.ico
+
+# Linux 构建配置
+linux:
+  executableName: moyin-creator
+  icon: build/icon.png
+  category: AudioVideo
+  target:
+    - target: AppImage
+      arch:
+        - x64
+    - target: deb
+      arch:
+        - x64
+    - target: tar.gz
+      arch:
+        - x64
+
+# macOS 构建配置
+mac:
+  executableName: moyin-creator
+  icon: build/icon.icns
+  category: public.app-category.video
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
