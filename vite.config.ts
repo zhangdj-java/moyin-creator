@@ -33,11 +33,6 @@ export default defineConfig({
         // https://github.com/electron-vite/vite-plugin-electron-renderer/issues/78#issuecomment-2053600808
         ? undefined
         : {},
-      // Electron启动配置 - 支持--no-sandbox参数
-      onstart: (args) => {
-        args.push('--no-sandbox')
-        args.push('--disable-setuid-sandbox')
-      },
     }),
   ],
 })
