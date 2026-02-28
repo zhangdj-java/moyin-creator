@@ -8,6 +8,13 @@ import https from 'node:https'
 import http from 'node:http'
 import os from 'node:os'
 
+// Root用户运行需要禁用sandbox
+if (process.getuid && process.getuid() === 0) {
+  console.log('[main] Running as root, disabling sandbox for Electron')
+  app.commandLine.appendSwitch('--no-sandbox')
+  app.commandLine.appendSwitch('--disable-setuid-sandbox')
+}
+
 // electron-vite 构建后的目录结构
 //
 // ├─┬ out

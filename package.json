@@ -16,6 +16,8 @@
   "type": "module",
   "scripts": {
     "dev": "electron-vite dev",
+    "dev:root": "electron-vite dev -- --no-sandbox",
+    "dev:linux": "electron-vite dev",
     "build": "electron-vite build && electron-builder",
     "build:win": "electron-vite build && electron-builder --win",
     "build:linux": "electron-vite build && electron-builder --linux",
