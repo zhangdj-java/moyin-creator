@@ -50,5 +50,11 @@ export default defineConfig({
     plugins: [
       react(),
     ],
+    // 配置开发服务器监听所有IP
+    server: {
+      host: '0.0.0.0',
+      port: 5173,
+      strictPort: true,
+    },
   },
 })
