@@ -1,5 +1,5 @@
-// 🎬 AI影视生产工具 - 应用配置
-// 自定义配置覆盖默认设置
+// 🎬 AI影视工具 - 应用配置（已配置API）
+// 配置时间: 2026-02-28
 
 export const appConfig = {
   // 应用信息
@@ -9,23 +9,39 @@ export const appConfig = {
     description: 'AI驱动的影视创作平台',
   },
   
-  // AI服务商配置（用户需要填入自己的API Key）
+  // AI服务商配置（已配置魔因API）
   ai: {
-    // Seedance 2.0
-    seedance: {
+    // 魔因API - 全功能AI中转
+    memefast: {
       enabled: true,
-      apiKey: process.env.SEEDANCE_API_KEY || '',
-      baseUrl: 'https://api.seedance.io',
+      apiKey: 'sk-rCG91opkqcIrLuTmOX36zIYbAyGbYTZzRPCB4iYZJwR4KpzW',
+      baseUrl: 'https://memefast.top',
+      models: [
+        'deepseek-v3.2',
+        'glm-4.7',
+        'gemini-3-pro-preview',
+        'gemini-3-pro-image-preview',
+        'gpt-image-1.5',
+        'doubao-seedance-1-5-pro-251215',
+        'veo3.1',
+        'sora-2-all',
+        'wan2.6-i2v',
+        'grok-video-3-10s',
+        'claude-haiku-4-5-20251001',
+      ],
+      capabilities: ['text', 'vision', 'image_generation', 'video_generation'],
     },
     // 图像生成
     image: {
-      provider: 'stable-diffusion', // 或其他支持的提供商
-      apiKey: process.env.IMAGE_API_KEY || '',
+      provider: 'memefast',
+      apiKey: 'sk-rCG91opkqcIrLuTmOX36zIYbAyGbYTZzRPCB4iYZJwR4KpzW',
+      baseUrl: 'https://memefast.top',
     },
     // 视频生成
     video: {
-      provider: 'seedance',
-      apiKey: process.env.VIDEO_API_KEY || '',
+      provider: 'memefast',
+      apiKey: 'sk-rCG91opkqcIrLuTmOX36zIYbAyGbYTZzRPCB4iYZJwR4KpzW',
+      baseUrl: 'https://memefast.top',
     },
   },
   

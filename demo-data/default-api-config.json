@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "providers": [
+    {
+      "id": "default-memefast",
+      "platform": "memefast",
+      "name": "魔因API",
+      "baseUrl": "https://memefast.top",
+      "apiKey": "sk-rCG91opkqcIrLuTmOX36zIYbAyGbYTZzRPCB4iYZJwR4KpzW",
+      "model": [
+        "deepseek-v3.2",
+        "glm-4.7",
+        "gemini-3-pro-preview",
+        "gemini-3-pro-image-preview",
+        "gpt-image-1.5",
+        "doubao-seedance-1-5-pro-251215",
+        "veo3.1",
+        "sora-2-all",
+        "wan2.6-i2v",
+        "grok-video-3-10s",
+        "claude-haiku-4-5-20251001"
+      ],
+      "capabilities": ["text", "vision", "image_generation", "video_generation"],
+      "enabled": true
+    }
+  ],
+  "featureBindings": {
+    "script_analysis": ["memefast:deepseek-v3.2"],
+    "character_generation": ["memefast:gemini-3-pro-image-preview"],
+    "scene_generation": ["memefast:gemini-3-pro-image-preview"],
+    "video_generation": ["memefast:doubao-seedance-1-5-pro-251215"],
+    "image_understanding": ["memefast:gemini-3-pro-preview"],
+    "chat": ["memefast:deepseek-v3.2"]
+  },
+  "concurrency": {
+    "imageGeneration": 3,
+    "videoGeneration": 2
+  },
+  "configuredAt": "2026-02-28T12:00:00Z"
+}
